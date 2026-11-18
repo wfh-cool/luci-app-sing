@@ -79,7 +79,7 @@ config sing-box 'main'
 | 保存并应用  | 保存、校验，通过后重启服务                               |
 | 重载配置    | 从 `conffile` 重新读取内容；有未保存修改时先确认是否放弃 |
 
-配置大小上限为 **128 KiB**，按 UTF-8 字节数计算。格式化使用 `JSON.parse` 和 `JSON.stringify`，不调用 `sing-box format`，输入必须是标准 JSON。
+配置大小上限为 **512 KiB**，按 UTF-8 字节数计算。格式化使用 `JSON.parse` 和 `JSON.stringify`，不调用 `sing-box format`，输入必须是标准 JSON。
 
 校验使用已安装的 sing-box 内核及服务工作目录。“校验”传入临时文件路径，完成后清理；“保存并应用”传入正式配置路径：
 
