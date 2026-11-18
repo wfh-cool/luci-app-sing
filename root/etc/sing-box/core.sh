@@ -4,7 +4,7 @@
 RUN=/tmp/sing-box-panel
 INIT=/etc/init.d/sing-box
 BIN=/usr/bin/sing-box
-MAX_SIZE=65536
+MAX_SIZE=524288
 
 prepare() {
 	umask 077
