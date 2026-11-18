@@ -235,7 +235,7 @@ return view.extend({
 
   content() {
     if (!this.loaded) throw new Error('请先重载配置');
-    if (new Blob([this.editor.value]).size > 65536) throw new Error(messages.config_too_large);
+    if (new Blob([this.editor.value]).size > 524288) throw new Error(messages.config_too_large);
     return this.editor.value;
   },
 
