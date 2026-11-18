@@ -24,7 +24,7 @@ prepare || { reply 0 'directories_failed' "$DETAILS"; exit 0; }
 case "$2" in
 	upload)
 		kind='' content=''
-		payload=$(head -c 524288)
+		payload=$(head -c 1048576)
 		json_load "$payload" 2>/dev/null || { reply 0 request_invalid; exit 0; }
 		json_get_type kind content
 		[ "$kind" = string ] || { reply 0 content_invalid; exit 0; }
@@ -162,7 +162,7 @@ case "$2" in
 		json_dump;;
 	save|check)
 		kind='' content='' revision=''
-		payload=$(head -c 524288)
+		payload=$(head -c 1048576)
 		json_load "$payload" 2>/dev/null || { reply 0 request_invalid; exit 0; }
 		json_get_type kind content
 		[ "$kind" = string ] || { reply 0 content_invalid; exit 0; }
